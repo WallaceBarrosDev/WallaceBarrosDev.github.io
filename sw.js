@@ -1,23 +1,40 @@
-const CACHE_NAME = "meu-app-cache-v1";
+const CACHE_NAME = "site-cache-v1";
 const urlsToCache = [
   "/",
   "/index.html",
   "/assets/index-C7iDT5XF.js",
-  "/assets/index-Cn0V5S26.css"
+  "/assets/index-Cn0V5S26.css",
+  "/icon-192.png",
+  "/icon-512.png"
 ];
 
-self.addEventListener("install", event => {
+self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => {
+    caches.open(CACHE_NAME).then((cache) => {
       return cache.addAll(urlsToCache);
     })
   );
 });
 
-self.addEventListener("fetch", event => {
+self.addEventListener("fetch", (event) => {
   event.respondWith(
-    caches.match(event.request).then(response => {
+    caches.match(event.request).then((response) => {
       return response || fetch(event.request);
+    })
+  );
+});
+
+self.addEventListener("activate", (event) => {
+  const cacheWhitelist = [CACHE_NAME];
+  event.waitUntil(
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames.map((cacheName) => {
+          if (!cacheWhitelist.includes(cacheName)) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
     })
   );
 });
