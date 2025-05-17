@@ -1,4 +1,4 @@
-import { processMarkdownService } from "../services/marked.service";
+import { processMarkdownService } from "../services/processMarkdown.service";
 import type { Article } from "../types";
 
 export function cmsComponent(article: Article) {
