@@ -1,4 +1,4 @@
-import type { AllArticlesData, Article } from "../types";
+import type { AllArticles, AllArticlesData, Article } from "../types";
 
 export function cmsService() {
     const query = `
@@ -26,5 +26,24 @@ export function cmsService() {
         return allArticlesData.data.allArticles;
     }
 
-    return articles();
+    // return articles();
+    return allArticles();
+}
+
+function allArticles(): AllArticles {
+    const article1: Article = {
+        title: "Meu artigo 1",
+        description: "# Meu artigo 1"
+    }
+
+    const article2: Article = {
+        title: "Meu artigo 2",
+        description: "# meu artigo 2"
+    }
+
+    const allArticles: AllArticles =[
+        article1, article2
+    ];
+    
+    return allArticles
 }
