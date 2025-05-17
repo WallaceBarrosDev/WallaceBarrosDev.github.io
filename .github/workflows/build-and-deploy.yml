@@ -29,5 +29,10 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Configurar usuário do Git
+        run: |
+          git config --global user.name "WallaceBarrosDev"
+          git config --global user.email "w.wallacebarro.cruz@gmail.com"
+
       - name: Deploy
         run: npm run deploy
