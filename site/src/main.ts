@@ -7,3 +7,11 @@ import viteLogo from '/vite.svg'
 window.addEventListener('popstate', router);
 
 window.addEventListener('DOMContentLoaded', router);
+
+document.querySelector("#h")!.innerHTML = `
+  <h1>Wallace Barros Dev</h1>
+`;
+
+document.querySelector("#f")!.innerHTML= `
+  <small>@Wallace Barros Dev</small>
+`;

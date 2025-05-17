@@ -7,6 +7,7 @@ export default function articleComponent(article: Article) {
     app.innerHTML = `
         <article class="article">
             ${processMarkdownService(article.description)}
+            <a href="/"> voltar </a>
         </article>
     `
 }
