@@ -1,3 +1,4 @@
+import { processMarkdownService } from "../services/marked.service";
 import type { Article } from "../types";
 
 export function cmsComponent(article: Article) {
@@ -8,7 +9,7 @@ export function cmsComponent(article: Article) {
             <h2>${article.title}</h2>
             <bd>
             <div>
-                ${article.description}
+                ${processMarkdownService(article.description)}
             </div>
         </div>
         `
