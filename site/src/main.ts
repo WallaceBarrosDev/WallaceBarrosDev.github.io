@@ -4,9 +4,17 @@ import './styles/global.css'
 // @ts-ignore
 import viteLogo from '/vite.svg'
 
-window.addEventListener('popstate', router);
+const params = new URLSearchParams(window.location.search);
+const path = params.get("redirect");
 
-window.addEventListener('DOMContentLoaded', router);
+if (path) {
+  history.replaceState(null, "", window.location.origin + path);
+  router();
+} else {
+  window.addEventListener('DOMContentLoaded', router);
+}
+
+window.addEventListener('popstate', router);
 
 document.querySelector("#h")!.innerHTML = `
   <h1>Wallace Barros Dev</h1>
