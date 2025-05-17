@@ -5,6 +5,8 @@ export type Article = {
 
 export type AllArticlesData = {
     data: {
-        allArticles: Article[];
+        allArticles: AllArticles;
     };
 }
+
+export type AllArticles = Array<Article>;

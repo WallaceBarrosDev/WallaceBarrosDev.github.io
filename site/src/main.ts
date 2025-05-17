@@ -1,15 +1,17 @@
 // @ts-ignore
-import { cmsController } from './controllers/cms.controller';
+import router from './router/router';
 import './styles/global.css'
 // @ts-ignore
 import viteLogo from '/vite.svg'
 
+window.addEventListener('popstate', router);
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <main>
-    <h1> Hello Word !!! </h1>
-    <div id="articles"></div>
-  </main>
+window.addEventListener('DOMContentLoaded', router);
+
+document.querySelector("#h")!.innerHTML = `
+  <h1>Wallace Barros Dev</h1>
 `;
 
-cmsController();
+document.querySelector("#f")!.innerHTML= `
+  <small>@Wallace Barros Dev</small>
+`;
