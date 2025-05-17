@@ -35,4 +35,6 @@ jobs:
           git config --global user.email "w.wallacebarro.cruz@gmail.com"
 
       - name: Deploy
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run deploy
