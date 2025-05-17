@@ -8,7 +8,7 @@ import viteLogo from '/vite.svg'
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <main>
     <h1> Hello Word !!! </h1>
-    <div id="#articles"></div>
+    <div id="articles"></div>
   </main>
 `;
 
