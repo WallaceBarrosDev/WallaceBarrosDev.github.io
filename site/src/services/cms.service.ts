@@ -27,5 +27,4 @@ export function cmsService() {
     }
 
     return articles();
-    // return allArticlesMoke();
 }
