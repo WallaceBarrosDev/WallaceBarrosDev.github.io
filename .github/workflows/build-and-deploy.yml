@@ -1,0 +1,36 @@
+name: Build and Deploy on Merge to Main
+
+on:
+  push:
+    branches:
+      - main
+    # Só executa se vier da development
+    paths:
+      - 'site/**'
+    # Garante que só executa em merge vindo da development
+    # O GitHub Actions não tem um filtro nativo para "merge from branch", então usamos um if no job
+
+jobs:
+  build-and-deploy:
+    if: github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'main' && github.event.pull_request.head.ref == 'development'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: site
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy
+        run: npm run deploy
