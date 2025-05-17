@@ -1,5 +1,8 @@
+// @ts-ignore
 import './style.css'
+// @ts-ignore
 import typescriptLogo from './typescript.svg'
+// @ts-ignore
 import viteLogo from '/vite.svg'
 import { setupCounter } from './counter.ts'
 
@@ -18,6 +21,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <p class="read-the-docs">
       Click on the Vite and TypeScript logos to learn more
     </p>
+    <p>Teste AAAAAAAAAAAAAAAAAAAAAAAAA</p>
   </div>
 `
 
