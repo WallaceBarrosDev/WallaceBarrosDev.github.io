@@ -21,7 +21,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     <p class="read-the-docs">
       Click on the Vite and TypeScript logos to learn more
     </p>
-    <p>Teste AAAAAAAAAAAAAAAAAAAAAAAAA</p>
+    <p>Teste 2</p>
   </div>
 `
 
