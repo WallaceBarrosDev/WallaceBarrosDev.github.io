@@ -27,10 +27,10 @@ export function cmsService() {
     }
 
     // return articles();
-    return allArticles();
+    return allArticlesMoke();
 }
 
-function allArticles(): AllArticles {
+function allArticlesMoke(): AllArticles {
     const article1: Article = {
         title: "Meu artigo 1",
         description: "# Meu artigo 1"
