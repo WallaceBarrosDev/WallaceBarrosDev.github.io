@@ -1,5 +1,5 @@
 import { articleController } from "../controllers/article.controller";
-import { cmsController } from "../controllers/cms.controller";
+import { homeController } from "../controllers/home.controller";
 import { error404Controller } from "../controllers/error404.controller";
 
 type TableRouter = {
@@ -7,7 +7,7 @@ type TableRouter = {
 }
 
 const tableRouter: TableRouter = {
-    '/': cmsController,
+    '/': homeController,
     '/article': (title?: string) => articleController(title || '')
 }
 
@@ -23,7 +23,3 @@ export default function router(): void{
     const route = tableRouter[path] ? tableRouter[path] : error404Controller;
     route();
 };
-
-// function routerTest() {
-//     console.log('router test');
-// }
