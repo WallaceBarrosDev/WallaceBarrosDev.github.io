@@ -65,7 +65,7 @@ Please report this to https://github.com/markedjs/marked.`,e){const s="<p>An err
             ${it(h.description)}
             <a href="/"> voltar </a>
         </article>
-    `}async function ot(h){const t=(await ae()).find(n=>n.title===decodeURIComponent(h));if(!t){window.location.pathname="/erro";return}lt(t)}function at(h){return`
+    `}async function ot(h){const t=(await ae()).find(n=>n.title.trim()==decodeURIComponent(h));t&&lt(t)}function at(h){return`
         <div class="articleComponent">
             <h2><a href="/article/${h.title}">${h.title}</a></h2>
         </div>
