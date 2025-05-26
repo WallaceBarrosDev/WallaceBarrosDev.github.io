@@ -6,11 +6,11 @@ export async function articleController(title: string) {
     const articles = await cmsService();
 
     const article = articles.find((article: Article) => {
-        return article.title === decodeURIComponent(title);
+        return article.title.trim() == decodeURIComponent(title);
     }) as Article | undefined;
 
     if (!article) {
-        window.location.pathname = "/erro";
+        // window.location.pathname = "/erro";        
         return;
     }
 
