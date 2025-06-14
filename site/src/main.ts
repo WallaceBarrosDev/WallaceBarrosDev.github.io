@@ -1,25 +1,14 @@
-// @ts-ignore
-import router from './router/router';
-import './styles/global.css'
-// @ts-ignore
-import viteLogo from '/vite.svg'
+import './assets/main.css'
 
-const params = new URLSearchParams(window.location.search);
-const path = params.get("redirect");
+import { createApp } from 'vue'
+import { createPinia } from 'pinia'
 
-if (path) {
-  history.replaceState(null, "", window.location.origin + path);
-  router();
-} else {
-  window.addEventListener('DOMContentLoaded', router);
-}
+import App from './App.vue'
+import router from './router'
 
-window.addEventListener('popstate', router);
+const app = createApp(App)
 
-document.querySelector("#h")!.innerHTML = `
-  <h1>Wallace Barros Dev</h1>
-`;
+app.use(createPinia())
+app.use(router)
 
-document.querySelector("#f")!.innerHTML= `
-  <small>@Wallace Barros Dev</small>
-`;
+app.mount('#app')
