@@ -2,24 +2,17 @@
 import HeaderComponent from '@/components/HeaderComponent.vue';
 import { ref } from 'vue';
 
-const showHeader = ref<boolean>(false);
-const user = ref({
-  firstName: 'john',
-  lastName: 'doe'
-})
-const isHome = ref<boolean>(true)
+const text = ref<string>('Hello word')
 
 </script>
 
 <template>
   <main>
-    <HeaderComponent v-show="showHeader"/>
-
-    <h1 :class="{'title': true, 'title-home': isHome }">Teste</h1>
-
-    <template v-for="prop in user">
-      <p> {{ prop }}</p>
-    </template>
+    <input
+      v-model="text"
+      type="text"
+    >
+    <p>{{ text }}</p>
   </main>
 </template>
 
