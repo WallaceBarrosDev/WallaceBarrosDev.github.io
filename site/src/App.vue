@@ -14,8 +14,9 @@ const user = ref({
   <main>
     <HeaderComponent v-show="showHeader"/>
     <h1>Teste</h1>
-    <p>{{ user.firstName }}</p>
-    <p>{{ user.lastName }}</p>
+    <template v-for="prop in user">
+      <p> {{ prop }}</p>
+    </template>
   </main>
 </template>
 
