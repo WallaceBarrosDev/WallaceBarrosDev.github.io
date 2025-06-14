@@ -7,6 +7,11 @@ export default mergeConfig(
   defineConfig({
     test: {
       environment: 'jsdom',
+      globals: true,
+      fileParallelism: false,
+      setupFiles: ['vitest.setup.ts'],
+      globalSetup: ['vitest.global.setup.ts'],
+      include: ['src/**/*.{spec,test}.{ts,vue}'],
       exclude: [...configDefaults.exclude, 'e2e/**'],
       root: fileURLToPath(new URL('./', import.meta.url)),
     },
