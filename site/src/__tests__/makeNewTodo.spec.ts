@@ -1,6 +1,6 @@
 import type { Todo } from '@/types'
 import { describe, it, expect } from 'vitest'
-import makeNewTodo from './makeNewTodo'
+import makeNewTodo from '@/core/makeNewTodo'
 
 describe('todo test (unit)', () => {
   it('make new todo', () => {

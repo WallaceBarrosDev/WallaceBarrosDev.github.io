@@ -2,8 +2,8 @@ import type { Todo } from "@/types";
 
 export default function makeNewTodo(description: string): Todo {
   return {
-    id: '1',
+    id: crypto.randomUUID(),
     description,
-    dateAt: new Date().toString()
+    dateAt: new Date().toISOString()
   }
 }
